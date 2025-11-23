@@ -355,7 +355,7 @@
     <header>
         <div class="wrap">
             <h1>🧱 Mel Blockchain</h1>
-            <span class="tag">Secciones: Hash • Bloque • Blockchain • Coinbase</span>
+            <span class="tag">Secciones: Hash • Bloque • Blockchain</span>
         </div>
     </header>
     <main>
@@ -385,7 +385,7 @@
             <section id="sec-bloque" class="card">
                 <h2>2) Bloque</h2>
                 <p>Juega con un bloque y haz <em>minería</em> (Proof-of-Work): busca un <code>nonce</code> tal que el
-                    hash empiece con <code>0</code> repetido <em>difficulty</em> veces.</p>
+                    hash empiece con <code>0</code> repetido como quieras (puesto en Dificultad).</p>
                 <div class="cols-2">
                     <div class="list">
                         <label>Datos (JSON libre)</label>
@@ -446,70 +446,7 @@
                 <div id="pairs-container" class="list pairs-grid"></div>
             </section>
 
-            <!-- 4) COINBASE -->
-            <section id="sec-coinbase4" class="card">
-                <h2>4) Coinbase</h2>
-                <p>Añade transacciones (emisor, receptor, cantidad) y mina bloques. Cada bloque incluye una
-                    <em>coinbase</em> de 50 BTC al minero desde <code>0x000…000</code>. La génesis de esta sección
-                    entrega saldo inicial a <strong>Satoshi</strong>.
-                </p>
-                <div class="row" style="gap:12px;margin-bottom:8px">
-                    <label class="small muted">Recompensa por bloque</label>
-                    <input id="cb-reward" type="number" value="50" />
-                    <div class="pill">Dificultad fija: 3</div>
-                </div>
-                <div class="cols-3">
-                    <!-- ORDEN NUEVO: 1) MINAR 2) CREAR TX 3) BALANCES -->
-                    <div class="node" id="cb-box-mine">
-                        <div class="row" style="justify-content:space-between;align-items:center">
-                            <strong>Minar bloque</strong><span class="badge small">⛏️</span>
-                        </div>
-                        <div class="list">
-                            <label class="small muted">Minero (cobra la coinbase)</label><input id="cb-miner"
-                                placeholder="TuNombre" />
-                            <button id="cb-btn-mine" class="good">Minar (coinbase + mempool)</button>
-                            <div id="cb-mine-status" class="small muted"></div>
-                            <details>
-                                <summary>Último bloque</summary>
-                                <pre id="cb-lastblock" class="mono small"></pre>
-                            </details>
-                        </div>
-                    </div>
 
-                    <div class="node" id="cb-box-create-tx">
-                        <div class="row" style="justify-content:space-between;align-items:center">
-                            <strong>Crear transacción</strong><span class="badge small">Mempool</span>
-                        </div>
-                        <div class="list">
-                            <label class="small muted">Emisor</label><input id="cb-from" placeholder="Satoshi"
-                                value="Satoshi" />
-                            <label class="small muted">Receptor</label><input id="cb-to" placeholder="Hal"
-                                value="Hal" />
-                            <label class="small muted">Cantidad (BTC)</label><input id="cb-amount" type="number" min="0"
-                                step="1" value="10" />
-                            <button id="cb-btn-add" class="primary">Añadir TX</button>
-                            <div class="hr"></div>
-                            <div class="scroll">
-                                <pre id="cb-mempool" class="mono small"></pre>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="node" id="cb-box-balances">
-                        <div class="row" style="justify-content:space-between;align-items:center">
-                            <strong>Balances</strong><span class="badge small">Σ</span>
-                        </div>
-                        <div class="list">
-                            <button id="cb-btn-balances">Calcular balances</button>
-                            <div class="scroll">
-                                <pre id="cb-balances" class="mono small"></pre>
-                            </div>
-                            <div class="small muted">Nota: se muestran balances confirmados y también una proyección que
-                                incluye las transacciones en el mempool.</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
         </div>
     </main>
