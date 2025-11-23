@@ -451,7 +451,7 @@
                 <h2>4) Coinbase</h2>
                 <p>Añade transacciones (emisor, receptor, cantidad) y mina bloques. Cada bloque incluye una
                     <em>coinbase</em> de 50 BTC al minero desde <code>0x000…000</code>. La génesis de esta sección
-                    entrega saldo inicial a <strong>Alice</strong>.
+                    entrega saldo inicial a <strong>Satoshi</strong>.
                 </p>
                 <div class="row" style="gap:12px;margin-bottom:8px">
                     <label class="small muted">Recompensa por bloque</label>
@@ -481,10 +481,10 @@
                             <strong>Crear transacción</strong><span class="badge small">Mempool</span>
                         </div>
                         <div class="list">
-                            <label class="small muted">Emisor</label><input id="cb-from" placeholder="Alice"
-                                value="Alice" />
-                            <label class="small muted">Receptor</label><input id="cb-to" placeholder="Bob"
-                                value="Bob" />
+                            <label class="small muted">Emisor</label><input id="cb-from" placeholder="Satoshi"
+                                value="Satoshi" />
+                            <label class="small muted">Receptor</label><input id="cb-to" placeholder="Hal"
+                                value="Hal" />
                             <label class="small muted">Cantidad (BTC)</label><input id="cb-amount" type="number" min="0"
                                 step="1" value="10" />
                             <button id="cb-btn-add" class="primary">Añadir TX</button>
@@ -688,9 +688,9 @@
                 const leftList = wrap.querySelector('.cols-2').children[0];
                 const dataArea = refs.data;
                 const lblFrom = document.createElement('label'); lblFrom.className = 'small muted'; lblFrom.textContent = 'Emisor';
-                const inFrom = document.createElement('input'); inFrom.className = 'from'; inFrom.placeholder = 'Alice';
+                const inFrom = document.createElement('input'); inFrom.className = 'from'; inFrom.placeholder = 'Satoshi';
                 const lblTo = document.createElement('label'); lblTo.className = 'small muted'; lblTo.textContent = 'Receptor';
-                const inTo = document.createElement('input'); inTo.className = 'to'; inTo.placeholder = 'Bob';
+                const inTo = document.createElement('input'); inTo.className = 'to'; inTo.placeholder = 'Hal';
                 const lblAmt = document.createElement('label'); lblAmt.className = 'small muted'; lblAmt.textContent = 'Cantidad (BTC)';
                 const inAmt = document.createElement('input'); inAmt.className = 'amount'; inAmt.type = 'number'; inAmt.min = '0'; inAmt.step = '0.00000001'; inAmt.value = '0';
 
@@ -871,7 +871,7 @@
         })();
 
         // ---- Sección 4) Coinbase (mejorada) ----
-        const cbChain = new Blockchain({ difficulty: 3, reward: 50, premine: { to: 'Alice', amount: 1_000_000 } });
+        const cbChain = new Blockchain({ difficulty: 3, reward: 50, premine: { to: 'Satoshi', amount: 1_000_000 } });
         function cbRenderMempool() { el('cb-mempool').textContent = JSON.stringify(cbChain.mempool, null, 2) }
         function cbRenderBalances() {
             const confirmed = cbChain.balances();
